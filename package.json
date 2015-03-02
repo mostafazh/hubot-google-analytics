@@ -1,7 +1,7 @@
 {
   "name": "hubot-google-analytics",
   "description": "A Hubot script that queries Google Analytics",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Mostafa Zaher <me@mostafazh.me>",
   "license": "MIT",
   "keywords": [
