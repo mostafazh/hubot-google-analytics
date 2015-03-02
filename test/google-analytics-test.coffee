@@ -12,8 +12,5 @@ describe 'google-analytics', ->
 
     require('../src/google-analytics')(@robot)
 
-  it 'registers a respond listener', ->
-    expect(@robot.respond).to.have.been.calledWith(/hello/)
-
   it 'registers a hear listener', ->
-    expect(@robot.hear).to.have.been.calledWith(/orly/)
+    expect(@robot.hear).to.have.been.calledWith(/pageviews list/i)

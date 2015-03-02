@@ -19,6 +19,7 @@ Then add **hubot-google-analytics** to your `external-scripts.json`:
 ## Sample Interaction
 
 ```
-user1>> hubot hello
-hubot>> hello!
+user1>> pageviews list
+hubot>> Profle 1 - http://www.example.com - 12345678
+Profle 2 - http://test.example.com - 12345679
 ```
