@@ -18,7 +18,8 @@
     "url": "https://github.com/mostafazh/hubot-google-analytics/issues"
   },
   "dependencies": {
-    "coffee-script": "~1.6"
+    "coffee-script": "~1.6",
+    "googleapi": "~1.1.2"
   },
   "devDependencies": {
     "mocha": "*",
@@ -28,8 +29,7 @@
     "grunt-mocha-test": "~0.7.0",
     "grunt-release": "~0.6.0",
     "matchdep": "~0.1.2",
-    "grunt-contrib-watch": "~0.5.3",
-    "googleapi": "~1.1.2"
+    "grunt-contrib-watch": "~0.5.3"
   },
   "main": "index.coffee",
   "scripts": {
