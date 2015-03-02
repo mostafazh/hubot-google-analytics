@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "coffee-script": "~1.6",
-    "googleapi": "~1.1.2"
+    "hubot-googleapi": "~0.2.3"
   },
   "devDependencies": {
     "mocha": "*",
