@@ -1,25 +1,25 @@
 {
   "name": "hubot-google-analytics",
   "description": "A Hubot script that queries Google Analytics",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Mostafa Zaher <me@mostafazh.me>",
   "license": "MIT",
-
-  "keywords": ["hubot","hubot-scripts","analytics","google-analytics"],
-
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "analytics",
+    "google-analytics"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/mostafazh/hubot-google-analytics.git"
   },
-
   "bugs": {
     "url": "https://github.com/mostafazh/hubot-google-analytics/issues"
   },
-
   "dependencies": {
     "coffee-script": "~1.6"
   },
-
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
@@ -31,9 +31,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "googleapi": "~1.1.2"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "grunt test"
   }
