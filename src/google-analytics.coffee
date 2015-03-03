@@ -18,7 +18,7 @@
 #
 # Author:
 #   Mostafa Zaher[me@mostafazh.me]
-
+require('date-utils')
 
 format = (x) ->
     return if isNaN(x) then "" else x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")

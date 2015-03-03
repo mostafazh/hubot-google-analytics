@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "coffee-script": "~1.6",
-    "hubot-googleapi": "~0.2.3"
+    "hubot-googleapi": "~0.2.3",
+    "date-utils": "~1.2.16"
   },
   "devDependencies": {
     "mocha": "*",
