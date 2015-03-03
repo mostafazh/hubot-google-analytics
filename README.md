@@ -23,3 +23,7 @@ user1>> pageviews list
 hubot>> Profle 1 - http://www.example.com - 12345678
 Profle 2 - http://test.example.com - 12345679
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mostafazh/hubot-google-analytics/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
