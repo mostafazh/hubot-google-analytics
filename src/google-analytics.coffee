@@ -49,7 +49,7 @@ module.exports = (robot) ->
             accountId: '~all'
             webPropertyId: '~all'
           callback: (err, data)->               # node-style callback
-            return console.log(err) if err
+            return msg.send(err) if err
             msg.send data.items.map((item)->
               "#{item.id} - #{item.name}"
             ).join("\n")
