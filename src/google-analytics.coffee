@@ -6,6 +6,7 @@
 #
 # Commands:
 #   pageviews list - list all Google Analytics profiles accessible.
+#   analytics profiles list - list "id - name" from all Google Analytics profiles accessible.
 #   pageviews 12345678 yesterday - print yesterday's visits and pageviews.
 #   pageviews 12345678 last week - print last week's visits and pageviews.
 #   pageviews 12345678 last month - print last month's visits and pageviews.
@@ -30,13 +31,27 @@ module.exports = (robot) ->
           service: "analytics"
           version: "v3"
           endpoint: "management.profiles.list"
-          params:                               # parameters to pass to API 
+          params:                               # parameters to pass to API
             accountId: '~all'
             webPropertyId: '~all'
-          callback: (err, data)->               # node-style callback 
+          callback: (err, data)->               # node-style callback
             return console.log(err) if err
             msg.send data.items.map((item)->
               "#{item.name} - #{item.websiteUrl} - #{item.id}"
+            ).join("\n")
+
+    robot.hear /analytics profiles list/i, (msg) ->
+        robot.emit "googleapi:request",
+          service: "analytics"
+          version: "v3"
+          endpoint: "management.profiles.list"
+          params:                               # parameters to pass to API
+            accountId: '~all'
+            webPropertyId: '~all'
+          callback: (err, data)->               # node-style callback
+            return msg.send(err) if err
+            msg.send data.items.map((item)->
+              "#{item.id} - #{item.name}"
             ).join("\n")
 
     robot.respond /pageviews\s+(\d+)\s+(\w+)\s*(\w*)/i, (msg) ->
@@ -75,12 +90,12 @@ module.exports = (robot) ->
           service: "analytics"
           version: "v3"
           endpoint: "data.ga.get"
-          params:                               # parameters to pass to API 
+          params:                               # parameters to pass to API
             ids: "ga:#{websiteId}"
             metrics: 'ga:visits, ga:pageviews'
             'start-date': startDate
             'end-date': endDate
-          callback: (err, data)->               # node-style callback 
+          callback: (err, data)->               # node-style callback
             msg.send err if err
             console.log err
             console.log JSON.stringify(data)
