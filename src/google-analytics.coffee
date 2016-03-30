@@ -20,6 +20,7 @@
 # Author:
 #   Mostafa Zaher[me@mostafazh.me]
 require('date-utils')
+common = require('./lib/common')
 
 format = (x) ->
     return if isNaN(x) then "" else x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -58,32 +59,10 @@ module.exports = (robot) ->
         websiteId = msg.match[1]
         word1 = msg.match[2].toLowerCase()
         word2 = msg.match[3].toLowerCase()
-        command = if word2 then "#{word1}#{word2}" else word1
-        console.log command
-        startDate = Date.today()
-        endDate = Date.today()
-        if command == "lastyear"
-            startDate = startDate.removeDays(365)
-        else if command == "lastmonth"
-            startDate = startDate.removeDays(30)
-        else if command == "lastweek"
-            startDate = startDate.removeDays(7)
-        else if command == "thisyear"
-            startDate.setMonth(0)
-            startDate.setDate(1)
-            endDate.setMonth(11)
-            endDate.setDate(1)
-        else if command == "thismonth"
-            startDate.setDate(1)
-        else if command == "yesterday"
-            startDate = Date.yesterday()
-            endDate = Date.yesterday()
-        # else if command == "today"
-        else
-            return
 
-        startDate = startDate.toYMD("-")
-        endDate = endDate.toYMD("-")
+        command = if word2 then "#{word1}#{word2}" else word1
+        startDate = common.get_start_date(command)
+        endDate = common.get_end_date(command)
 
         console.log "s: #{startDate}, e: #{endDate}"
         robot.emit "googleapi:request",
