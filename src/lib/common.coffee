@@ -15,7 +15,6 @@ get_start_date = (command) ->
   else if command == "yesterday"
       startDate = Date.yesterday()
 
-  console.log command
   return startDate.toYMD("-")
 
 
@@ -29,7 +28,6 @@ get_end_date = (command) ->
   else if command == "yesterday"
       endDate = Date.yesterday()
 
-  console.log command
   return endDate.toYMD("-")
 
 
